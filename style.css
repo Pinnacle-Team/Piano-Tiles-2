@@ -1,0 +1,14 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.header{
+    height:10vh;
+    width:100%;
+    background-attachment: fixed;
+    background-color: grey;
+    color:white;
+    text-align: center;
+    padding: 20px auto;
+}
