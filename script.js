@@ -37,19 +37,20 @@ function addNewRow() {
 }
 
 function drawTiles() {
-  
-  let alphabets=['A','S','D','F'];
-  for(let i=0;i<tiles.length;++i){
-    let xpos = (i%4)*tileWidth;
-    let ypos = Math.floor(i/4)*tileHeight;
+  let alphabets = ["A", "S", "D", "F"];
+  for (let i = 0; i < tiles.length; ++i) {
+    let xpos = (i % 4) * tileWidth;
+    let ypos = Math.floor(i / 4) * tileHeight;
 
-    ctx.strokeStyle = '#FFFFFF';
-    if(tiles[i]==0){
-      ctx.fillStyle ='#000000';
-      ctx.fillRect(xpos,ypos,tileWidth,tileHeight);
-      ctx.fillStyle ='#FFFFFF';
-      ctx.font = '50px Arial';
-      ctx.fillText(alphabets[i%4],xpos+33,ypos+85);
+    ctx.strokeStyle = "#FFFFFF";
+    if (tiles[i] == 0) {
+      ctx.fillStyle = "#000000";
+      ctx.fillRect(xpos, ypos, tileWidth, tileHeight);
+      ctx.fillStyle = "#FFFFFF";
+      ctx.font = "50px Arial";
+      ctx.fillText(alphabets[i % 4], xpos + 33, ypos + 85);
+    }
+  }
 }
 
 function draw() {
