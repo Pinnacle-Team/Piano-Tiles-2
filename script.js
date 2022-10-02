@@ -5,7 +5,7 @@ ctx.lineWidth = "2";
 //global variables
 const WIDTH = canvas.width;
 const HEIGHT = canvas.height;
-const tileWidth = WIDTH / 4;
+const tileWidth = WIDTH / 4 ;
 const tileHeight = HEIGHT / 4;
 
 
@@ -26,7 +26,7 @@ var tiles = [];
 
 //add new row function
 function addNewRow(){
-  let blackIndex = Math.floor(Math.random()*3);
+  let blackIndex = Math.floor(Math.random()*4);
   for(let i=0;i<4;++i){
     if(i===blackIndex){
       tiles.push(0);
@@ -37,13 +37,19 @@ function addNewRow(){
 }
 
 function drawTiles(){
+
+  let alphabets=['A','S','D','F'];
   for(let i=0;i<tiles.length;++i){
     let xpos = (i%4)*tileWidth;
     let ypos = Math.floor(i/4)*tileHeight;
 
-    ctx.fillStyle ='#000000'
+    ctx.strokeStyle = '#FFFFFF';
     if(tiles[i]==0){
+      ctx.fillStyle ='#000000';
       ctx.fillRect(xpos,ypos,tileWidth,tileHeight);
+      ctx.fillStyle ='#FFFFFF';
+      ctx.font = '50px Arial';
+      ctx.fillText(alphabets[i%4],xpos+33,ypos+85);
     }
   }
 }
